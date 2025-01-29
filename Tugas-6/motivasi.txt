@@ -1,0 +1,4 @@
+" Motivasi saya mengikuti pelatihan Sanbercode adalah dorongan dari dalam diri untuk mendalami ilmu-ilmu yang sedang tren saat ini 
+  serta menekuni framework Laravel secara lebih mendalam.Dan Harapan Saya setelah mengikuti bootcamp Laravel 
+  adalah dapat menguasai Laravel dengan lebih baik,menerapkannya dalam proyek nyata, serta terus mengingat bootcamp ini sebagai 
+  pengalaman berharga yang memperdalam pemahaman saya dalam pengembangan web. " -Mohammad_Kresna
