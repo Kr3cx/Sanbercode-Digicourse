@@ -57,7 +57,7 @@
         return $kebalik; // Return the reversed string, not echo it
     }
 
-    echo reverseString("nama peserta") . "<br>";
+    echo reverseString("Mohammad Kresna") . "<br>";
     echo reverseString("Sanbercode") . "<br>";
     echo reverseString("We Are Sanbers Developers") . "<br>";
 
