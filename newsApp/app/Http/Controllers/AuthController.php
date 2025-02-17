@@ -8,14 +8,14 @@ class AuthController extends Controller
 {
     public function register()
     {
-        return view('register');
+        return view('pages.register');
     }
     public function welcome(Request $request)
     {
         $firstName = $request->input('first_name');
         $lastName = $request->input('last_name');
 
-        return view('welcome', compact('firstName', 'lastName'));
+        return view('pages.welcome', compact('firstName', 'lastName'));
     }
 
 }
