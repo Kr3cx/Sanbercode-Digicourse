@@ -59,6 +59,13 @@
                         </a>
                     </li>
 
+                    <li class="nav-item">
+                        <a href="{{ route('casts.index') }}" class="nav-link">
+                            <i class="far fa-circle nav-icon"></i>
+                            <p>Data Casts</p>
+                        </a>
+                    </li>
+
                 </ul>
             </li>
            
