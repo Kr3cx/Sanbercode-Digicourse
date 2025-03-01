@@ -1,12 +1,12 @@
 @extends('layouts.master')
 
 @section('title')
-    Cast Page
+    Genres Page
 @endsection
 
 
 @section('content')
-    <a href="/casts/create" class="btn btn-sm btn-primary mb-3">Add Cast</a>
+    <a href="/genres/create" class="btn btn-sm btn-primary mb-3">Add Genres</a>
 
     <table class="table">
         <thead>
@@ -17,16 +17,16 @@
             </tr>
         </thead>
         <tbody>
-            @forelse ($casts as $cast)
+            @forelse ($genres as $genre)
                 <tr>
                     <th scope="row">{{ $loop->iteration }}</th>
-                    <td>{{ $cast->name }}</td>
+                    <td>{{ $genre->name }}</td>
                     <td>
-                        <a href="/casts/{{ $cast->id }}" class="btn btn-sm btn-info">Detail</a>
-                        <a href="/casts/{{ $cast->id }}/edit" class="btn btn-sm btn-warning">Edit</a>
-                        <form action="/casts/{{ $cast->id }}/destroy" method="POST" class="d-inline">
-                            @method("DELETE")
+                        <a href="/genres/{{ $genre->id }}" class="btn btn-sm btn-info">Detail</a>
+                        <a href="/genres/{{ $genre->id }}/edit" class="btn btn-sm btn-warning">Edit</a>
+                        <form action="{{ route('genres.destroy', $genre->id) }}" method="POST" class="d-inline">
                             @csrf
+                            @method('DELETE') 
                             <button class="btn btn-sm btn-danger" type="submit">Hapus</button>
                         </form>
                     </td>
