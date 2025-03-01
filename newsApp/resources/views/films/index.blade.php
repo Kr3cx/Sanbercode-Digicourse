@@ -6,7 +6,10 @@
 
 
 @section('content')
+    @auth
+        
     <a href="/films/create" class="btn btn-sm btn-primary mb-3">Add Film</a>
+    @endauth
 
     <div class="row">
         @foreach ($films as $item)
@@ -14,9 +17,12 @@
                 <div class="card">
                     <img src="{{ asset('uploads/' . $item->poster) }}"  width="300px"  class="mx-auto" alt="...">
                     <div class="card-body">
-                        <h3>{{ $item->title}}</h3>
+                        <h3 class="mb-1">{{ $item->title}}</h3>
+                        <p class="mt-0 text-muted">Genre : {{ optional($item->genres)->name }}</p>
                         <p class="card-text">{{Str::limit($item->summary, 50)}}</p>
                         <a href="/films/{{ $item->id }}" class="btn btn-primary btn-sm btn-block">Detail</a>
+                        @auth
+                            
                         <div class="row mt-3">
                             <div class="col">
                                 <a href="/films/{{ $item->id }}/edit" class="btn btn-warning  btn-sm btn-block">Edit</a>
@@ -29,6 +35,7 @@
                                 </form>
                             </div>
                         </div>
+                        @endauth
                     </div>
                 </div>
             </div>

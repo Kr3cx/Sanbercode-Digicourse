@@ -6,7 +6,12 @@
                 alt="User Image">
         </div>
         <div class="info">
-            <a href="#" class="d-block">Alexander Pierce</a>
+            @auth
+            <a href="#" class="d-block">{{ Auth::user()->name }}</a>
+            @endauth
+            @guest
+            <a href="#" class="d-block">Belum login</a>    
+            @endguest
         </div>
     </div>
 
@@ -30,36 +35,51 @@
             
 
             <li class="nav-item">
-                <a href="#" class="nav-link">
+                <a href="{{ route('home') }}" class="nav-link">
                     <i class="nav-icon fas fa-tachometer-alt"></i>
                     <p>
                         Dashboard
                     </p>
                 </a>
+            </li>
+            @auth
+                <li class="nav-item">
+                    <a href="{{ route('casts.index') }}" class="nav-link">
+                        <i class="nav-icon fas fa-theater-masks"></i>
+                        <p>
+                            Cast
+                        </p>
+                    </a>
+                </li>
+
+
+
+                
+                
+                @endauth
+                
+                <li class="nav-item">
+                    <a href="{{ route('genres.index') }}" class="nav-link">
+                        <i class="nav-icon fas fa-user-secret"></i>
+                        <p>
+                            Genre
+                        </p>
+                    </a>
+                </li>
+            
 
             <li class="nav-item">
                 <a href="{{ route('films.index') }}" class="nav-link">
-                    <i class="nav-icon fas fa-th"></i>
+                    <i class="nav-icon fas fa-video"></i>
                     <p>
-                        Films
+                        Film
                     </p>
                 </a>
+            </li>
 
-            <li class="nav-item">
-                <a href="{{ route('genres.index') }}" class="nav-link">
-                    <i class="nav-icon fas fa-th"></i>
-                    <p>
-                        Genres
-                    </p>
-                </a>
+            
 
-            <li class="nav-item">
-                <a href="{{ route('casts.index') }}" class="nav-link">
-                    <i class="nav-icon fas fa-th"></i>
-                    <p>
-                        Cast
-                    </p>
-                </a>
+            
                 
             </li>
             <li class="nav-item">
@@ -70,13 +90,14 @@
                         <i class="right fas fa-angle-left"></i>
                     </p>
                 </a>
+            
                 <ul class="nav nav-treeview">
                     <li class="nav-item">
                         <a href="{{ route('table') }}" class="nav-link">
                             <i class="far fa-circle nav-icon"></i>
                             <p>Table</p>
                         </a>
-                    </li>
+                    
 
                     <li class="nav-item">
                         <a href="{{ route('data-table') }}" class="nav-link">
@@ -87,7 +108,17 @@
 
                 </ul>
             </li>
-           
+            @auth
+            <li>
+                <form action="/logout" method="POST">
+                    @csrf
+                    <button type="submit" class="btn btn-danger btn-block">Logout</button>
+                </form>
+            </li>
+            @endauth
+            @guest
+                <a href="/login" class="btn btn-info btn-block">Login</a>
+            @endguest
         </ul>
     </nav>
     <!-- /.sidebar-menu -->
