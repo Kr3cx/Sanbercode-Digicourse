@@ -7,6 +7,8 @@ use App\Http\Controllers\AuthController;
 use App\Http\Controllers\CastsController;
 use App\Http\Controllers\FilmsController;
 use App\Http\Controllers\GenresController;
+use App\Http\Controllers\ReviewsController;
+
 
 
 Route::get('/', [DashboardController::class, 'home'])->name('home');
@@ -40,8 +42,11 @@ Route::middleware(['auth'])->group(function () {
     // Hapus
     Route::delete('/casts/{id}/destroy', [CastsController::class, 'destroy'])->name('casts.destroy');
 
+    Route::post('/reviews/{film_id}', [ReviewsController::class, "store"]);
 
 });
+
+
 
 
 

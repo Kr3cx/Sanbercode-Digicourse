@@ -167,6 +167,6 @@ class FilmsController extends Controller
 
         $films->delete();
 
-        return redirect('/films')->with('success', 'Film berhasil dihapus!');
+        return view('films.show', compact('film', 'reviews'));
     }
 }

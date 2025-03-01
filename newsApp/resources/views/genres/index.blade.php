@@ -1,7 +1,7 @@
 @extends('layouts.master')
 
 @section('title')
-    Genres Page
+    Genre Page
 @endsection
 
 
