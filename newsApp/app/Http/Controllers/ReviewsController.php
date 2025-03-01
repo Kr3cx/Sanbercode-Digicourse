@@ -26,7 +26,7 @@ class ReviewsController extends Controller
 
 
         $reviews->content = $request['content'];
-        $reviews->point = 0;
+        $reviews->point = $request->point;
         $reviews->user_id = $user_id;
         $reviews->film_id = $film_id;
 
