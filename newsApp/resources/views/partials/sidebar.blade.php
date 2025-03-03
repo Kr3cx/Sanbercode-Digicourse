@@ -117,7 +117,7 @@
             </li>
             @endauth
             @guest
-                <a href="/login" class="btn btn-info btn-block">Login</a>
+                <a href="/login" class="btn btn-info btn-block text-white">Login</a>
             @endguest
         </ul>
     </nav>
